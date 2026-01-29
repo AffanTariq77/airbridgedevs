@@ -1,0 +1,116 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Rocket, Building2, Users } from "lucide-react";
+import WhyWorkWithUs from "./WhyWorkWithUs";
+
+const AudienceSegments = () => {
+  const segments = [
+    {
+      icon: Rocket,
+      title: "Funded Startups",
+      description:
+        "Building from 0→1? We help founders launch, validate, and scale.",
+      cta: "Start Your MVP",
+    },
+    {
+      icon: Building2,
+      title: "Enterprises",
+      description:
+        "AI-powered modernization, automation, and large-scale development.",
+      cta: "Transform Your Systems",
+    },
+    {
+      icon: Users,
+      title: "Product Teams",
+      description: "Engineering augmentation with Silicon Valley–level talent.",
+      cta: "Augment Your Team",
+    },
+  ];
+
+  return (
+    <>
+      <section id="case-studies" className="py-16 px-2 sm:px-6 md:py-20">
+        <div className="container mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2
+              className="text-4xl md:text-5xl font-bold mb-4"
+              style={{ color: "#192841" }}
+            >
+              Who We Serve
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Tailored solutions for every type of organization
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-8 max-w-6xl mx-auto">
+            {/* SVG gradient definition rendered once */}
+            <svg width="0" height="0" style={{ position: "absolute" }}>
+              <defs>
+                <linearGradient
+                  id="audience-gradient"
+                  x1="0"
+                  y1="0"
+                  x2="36"
+                  y2="36"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#8923cb" />
+                  <stop offset="1" stopColor="#374c70" />
+                </linearGradient>
+              </defs>
+            </svg>
+            {segments.map((segment, index) => {
+              const Icon = segment.icon;
+              return (
+                <Card
+                  key={index}
+                  className="p-6 md:p-8 text-center border border-border/40 hover:shadow-sky-blue transition-all duration-300 hover:-translate-y-2"
+                  style={{ background: "#F3F9FF" }}
+                >
+                  <div className="mb-8 flex justify-center">
+                    <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center">
+                      <Icon
+                        width={36}
+                        height={36}
+                        stroke="url(#audience-gradient)"
+                        strokeWidth={1.5}
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </div>
+                  </div>
+                  <h3
+                    className="text-2xl font-bold mb-4"
+                    style={{ color: "#192841" }}
+                  >
+                    {segment.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {segment.description}
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="w-full border border-border/40 hover:bg-sky-400 hover:shadow-sky-blue mt-4"
+                    onClick={() => {
+                      const el = document.getElementById("contact");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                  >
+                    {segment.cta}
+                  </Button>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      <WhyWorkWithUs />
+    </>
+  );
+};
+
+export default AudienceSegments;
