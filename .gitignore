@@ -33,4 +33,6 @@ pnpm-debug.log*
 *.sw?
 
 # Backup files
+venv
+main.py
 *.*-*-*-*.tsx
