@@ -26,18 +26,18 @@ const metrics = [
 
 const OurImpact = () => {
   return (
-    <section className="py-16 px-2 sm:px-6 md:py-20">
+    <section className="py-8 px-2 sm:px-6 md:py-10">
       <div className="container mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "#192841" }}
           >
-            Our Impact
+            Proven Engineering at Scale
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We help teams accelerate delivery, strengthen digital capabilities,
-            and achieve measurable results across industries.
+            We don't just write code; we eliminate technical debt. From rapid MVP launches to
+enterprise modernization, our systems are built to last.
           </p>
         </div>
         {/* SVG gradient definition rendered once */}

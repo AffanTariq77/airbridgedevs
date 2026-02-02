@@ -6,54 +6,55 @@ const Process = () => {
     {
       number: "01",
       title: "Understand",
-      description: "Deep exploration of goals and user needs.",
+      description: "Deep exploration of business goals and data feasibility.",
       details:
-        "We conduct workshops, interviews, and research to fully understand your business objectives and user pain points.",
+        "We conduct technical audits and one-on-one strategy calls to define clear KPIs, ensuring we build a solution that solves the right problem from day one.",
     },
     {
       number: "02",
       title: "Architect",
-      description: "Mapping user flows and scalable architecture.",
+      description: "Mapping secure, scalable, and AI-ready infrastructure.",
       details:
-        "We design robust system architectures and user journeys, ensuring scalability and maintainability from the start.",
+        "We map the full system architecture, from vector databases to API gateways, ensuring your data remains secure while maximizing model performance.",
     },
     {
       number: "03",
       title: "Build (AI Core)",
-      description: "Shipping fast, stable code powered by AI.",
+      description: "Shipping functional, stable, and clean code powered by AI.",
       details:
-        "Our engineers rapidly develop and integrate AI-driven features, focusing on quality and speed.",
+        "We ship in weeks, turning architectural plans into working software using best-in-class frameworks like LangChain, OpenAI, and Next.js.",
     },
     {
       number: "04",
       title: "Iterate",
-      description: "Refining based on real user data.",
+      description: "Optimizing model accuracy based on real user feedback.",
       details:
-        "We analyze user feedback and data to continuously improve the product, releasing updates quickly.",
+        "AI isn't static. We analyze early usage data to refine prompts, reduce latency, and eliminate hallucinations before the full public launch.",
     },
     {
       number: "05",
       title: "Scale",
-      description: "Infrastructure and automation for long-term growth.",
+      description: "Automating operations for long-term reliability and growth.",
       details:
-        "We implement automation, monitoring, and scaling strategies to support your growth and reliability.",
+        "We implement CI/CD pipelines, auto-scaling protocols, and enterprise-grade security to ensure your system performs flawlessly as traffic increases.",
     },
   ];
 
   const [hovered, setHovered] = React.useState<number | null>(null);
 
   return (
-    <section id="process" className="py-20 px-6 bg-muted/20">
+    <section id="process" className="py-10 px-6 bg-muted/20">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "#192841" }}
           >
-            How We Work
+            The AI Engineering Blueprint
           </h2>
           <p className="text-xl text-muted-foreground">
-            A proven process from concept to scale
+            From loose concept to deployed infrastructure, we systematically de-risk
+your build at every stage. A proven process from concept to scale
           </p>
         </div>
 

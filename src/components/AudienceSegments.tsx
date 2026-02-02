@@ -9,27 +9,27 @@ const AudienceSegments = () => {
       icon: Rocket,
       title: "Funded Startups",
       description:
-        "Building from 0→1? We help founders launch, validate, and scale.",
-      cta: "Start Your MVP",
+        "Validate fast. We build robust, investor-ready MVPs that demonstrate real traction, helping you secure your next funding round without technical debt.",
+      cta: "Launch Your MVP",
     },
     {
       icon: Building2,
       title: "Enterprises",
       description:
-        "AI-powered modernization, automation, and large-scale development.",
-      cta: "Transform Your Systems",
+        "Modernize legacy systems with secure, scalable AI. We automate critical workflows and unlock data silos without disrupting your existing operations.",
+      cta: "Scale Your Operations",
     },
     {
       icon: Users,
       title: "Product Teams",
-      description: "Engineering augmentation with Silicon Valley–level talent.",
+      description: "Eliminate backlog bottlenecks. Our senior engineers plug directly into your existing workflow to accelerate velocity and ship critical features faster.",
       cta: "Augment Your Team",
     },
   ];
 
   return (
     <>
-      <section id="case-studies" className="py-16 px-2 sm:px-6 md:py-20">
+      <section id="case-studies" className="py-8 px-2 sm:px-6 md:py-10">
         <div className="container mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2

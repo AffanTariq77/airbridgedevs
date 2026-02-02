@@ -6,6 +6,7 @@ import Process from "@/components/Process";
 import AudienceSegments from "@/components/AudienceSegments";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import ClientMarquee from "@/components/ClientMarquee";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <TechStack />
       <Process />
       <AudienceSegments />
+      <ClientMarquee />
       <ContactForm />
       <Footer />
     </div>

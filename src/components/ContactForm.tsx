@@ -45,12 +45,12 @@ const ContactForm = ({ onlyForm = false }: { onlyForm?: boolean }) => {
       });
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Failed to send message.");
+        throw new Error(data.error || "Failed to book strategy call.");
       }
       setSuccess(true);
       setFormData({ name: "", email: "", company: "", details: "" });
     } catch (err: any) {
-      setError(err.message || "Failed to send message.");
+      setError(err.message || "Failed to book strategy call.");
     } finally {
       setLoading(false);
     }
@@ -58,25 +58,35 @@ const ContactForm = ({ onlyForm = false }: { onlyForm?: boolean }) => {
 
   const form = (
     <form className="space-y-6 p-8 bg-white rounded-2xl shadow-none border-none" onSubmit={handleSubmit}>
-      <div className="space-y-2">
-        <label htmlFor="name" className="text-sm font-medium">
-          Full Name *
-        </label>
-        <Input id="name" placeholder="John Doe" required value={formData.name} onChange={handleChange} />
-      </div>
-      <div className="space-y-2">
-        <label htmlFor="email" className="text-sm font-medium">
-          Work Email *
-        </label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="john@company.com"
-          required
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="space-y-2">
+    <label htmlFor="name" className="text-sm font-medium">
+      Full Name *
+    </label>
+    <Input
+      id="name"
+      placeholder="John Doe"
+      required
+      value={formData.name}
+      onChange={handleChange}
+    />
+  </div>
+
+  <div className="space-y-2">
+    <label htmlFor="email" className="text-sm font-medium">
+      Work Email *
+    </label>
+    <Input
+      id="email"
+      type="email"
+      placeholder="john@company.com"
+      required
+      value={formData.email}
+      onChange={handleChange}
+    />
+  </div>
+</div>
+
       <div className="space-y-2">
         <label htmlFor="company" className="text-sm font-medium">
           Company Name
@@ -104,22 +114,23 @@ const ContactForm = ({ onlyForm = false }: { onlyForm?: boolean }) => {
         className="w-full hover:bg-sky-400 hover:shadow-sky-blue bg-[#192841] text-white text-base font-semibold rounded-lg"
         disabled={loading}
       >
-        {loading ? "Sending..." : "Send Message"}
+        {loading ? "Booking..." : "Book My Strategy Call"}
       </Button>
     </form>
   );
   if (onlyForm) return form;
   return (
-    <section id="contact" className="py-20 px-6 bg-muted/30">
+    <section id="contact" className="py-10 px-6 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Start Your Project
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Tell us about your goals, and we'll define the bridge to get you
-            there.
+            You have the vision. We have the engineering team to build it. Tell us about your goals,
+and we'll define the bridge to get you there.
           </p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Fill out the form below to secure your free strategy session.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Side - Benefits */}
@@ -129,27 +140,27 @@ const ContactForm = ({ onlyForm = false }: { onlyForm?: boolean }) => {
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-lg">24h Response</h4>
+                  <h4 className="font-semibold text-lg">Speed</h4>
                   <p className="text-muted-foreground">
-                    We'll get back to you within one business day
+                    Guaranteed response within 24 business hours
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-lg">NDA Included</h4>
+                  <h4 className="font-semibold text-lg">Security</h4>
                   <p className="text-muted-foreground">
-                    Your ideas and data are fully protected
+                    NDA included upfront. Your IP is 100% protected.
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-lg">Free Consultation</h4>
+                  <h4 className="font-semibold text-lg">Clarity</h4>
                   <p className="text-muted-foreground">
-                    No-commitment strategy call to explore possibilities
+                   No sales pressure. Just a technical deep-dive into your goals.
                   </p>
                 </div>
               </div>

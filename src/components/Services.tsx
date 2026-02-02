@@ -38,7 +38,7 @@ const Services = () => {
       title: "Generative AI Solutions",
       description: [
         "GenAI Automation Suite",
-        "Intelligent Content Generation",
+        "RAG (Retrieval-Augmented Generation) Pipelines",
         "AI-Powered Chat & Conversation Tools",
         "Next-Gen Virtual Assistance",
       ],
@@ -79,7 +79,7 @@ const Services = () => {
     <>
       <section
         id="services"
-        className="py-16 px-2 sm:px-6 md:py-20 bg-muted/20"
+        className="py-8 px-2 sm:px-6 md:py-10 bg-muted/20"
       >
         <div className="container mx-auto">
           <div className="text-center mb-12 md:mb-16">
@@ -90,7 +90,9 @@ const Services = () => {
               Our Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for every stage of your product journey
+              Comprehensive solutions for every stage of your product journey.
+From strategic roadmaps to deployed enterprise agents, we engineer the AI
+infrastructure that powers your growth.
             </p>
           </div>
 

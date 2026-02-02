@@ -10,7 +10,7 @@ const TechStack = () => {
         name: "OpenAI",
         details: {
           title: "OpenAI",
-          desc: "Creators of ChatGPT, DALL·E, and leading LLM APIs. Used for generative AI, chatbots, and advanced NLP tasks in production environments.",
+          desc: "Industry-leading LLMs (GPT-4) providing the reasoning engine for complex enterprise automation.",
           url: "https://openai.com/",
         },
       },
@@ -18,7 +18,7 @@ const TechStack = () => {
         name: "Anthropic",
         details: {
           title: "Anthropic",
-          desc: "AI safety pioneers and creators of Claude, a powerful conversational LLM for enterprise and research.",
+          desc: "High-security models with massive context windows, ideal for analyzing large documents and datasets.",
           url: "https://www.anthropic.com/",
         },
       },
@@ -26,7 +26,7 @@ const TechStack = () => {
         name: "LlamaIndex",
         details: {
           title: "LlamaIndex",
-          desc: "Framework for building LLM-powered data applications, especially for retrieval-augmented generation (RAG).",
+          desc: "The premier data framework for connecting your private data sources to Large Language Models.",
           url: "https://www.llamaindex.ai/",
         },
       },
@@ -34,7 +34,7 @@ const TechStack = () => {
         name: "PyTorch",
         details: {
           title: "PyTorch",
-          desc: "Flexible, developer-friendly deep learning library. Preferred for research and production AI models.",
+          desc: "Flexible deep learning framework used for building and training custom, high-performance neural networks.",
           url: "https://pytorch.org/",
         },
       },
@@ -42,7 +42,7 @@ const TechStack = () => {
         name: "TensorFlow",
         details: {
           title: "TensorFlow",
-          desc: "Production-grade ML framework by Google. Used for scalable, cross-platform ML and deep learning.",
+          desc: "Production-grade machine learning platform designed for scalable model deployment in enterprise environments.",
           url: "https://www.tensorflow.org/",
         },
       },
@@ -50,7 +50,7 @@ const TechStack = () => {
         name: "Pinecone",
         details: {
           title: "Pinecone",
-          desc: "Managed vector database for fast, scalable AI search and semantic retrieval.",
+          desc: "High-performance vector database enabling real-time semantic search and long-term memory for AI.",
           url: "https://www.pinecone.io/",
         },
       },
@@ -58,7 +58,7 @@ const TechStack = () => {
         name: "LangChain",
         details: {
           title: "LangChain",
-          desc: "Orchestrate LLM workflows, agents, and tools for advanced AI applications.",
+          desc: "The standard architecture for chaining LLMs into cognitive applications that can reason and act.",
           url: "https://www.langchain.com/",
         },
       },
@@ -66,7 +66,7 @@ const TechStack = () => {
         name: "Cohere",
         details: {
           title: "Cohere",
-          desc: "Enterprise NLP, embeddings, and LLMs for search, classification, and more.",
+          desc: "Enterprise-focused NLP models optimized for secure search, classification, and retrieval tasks.",
           url: "https://cohere.com/",
         },
       },
@@ -74,7 +74,7 @@ const TechStack = () => {
         name: "Mistral",
         details: {
           title: "Mistral",
-          desc: "Open-source LLMs for advanced AI, with a focus on transparency and performance.",
+          desc: "Efficient, high-performance open-source models offering cost-effective scalability for on-premise solutions.",
           url: "https://mistral.ai/",
         },
       },
@@ -82,7 +82,7 @@ const TechStack = () => {
         name: "Hugging Face",
         details: {
           title: "Hugging Face",
-          desc: "Hub for ML models, datasets, and tools. The go-to place for open-source AI.",
+          desc: "The global hub for state-of-the-art open-source models, enabling rapid prototyping and deployment.",
           url: "https://huggingface.co/",
         },
       },
@@ -90,7 +90,7 @@ const TechStack = () => {
         name: "Scikit-learn",
         details: {
           title: "Scikit-learn",
-          desc: "Classical ML algorithms and tools in Python. Great for data science and prototyping.",
+          desc: "Robust library for predictive data analysis and classical machine learning algorithms.",
           url: "https://scikit-learn.org/",
         },
       },
@@ -98,7 +98,7 @@ const TechStack = () => {
         name: "RAG pipelines",
         details: {
           title: "RAG pipelines",
-          desc: "Retrieval-augmented generation: combine LLMs with external data for more accurate, up-to-date answers.",
+          desc: "Custom retrieval architectures that ground AI responses in your verified business data to prevent hallucinations.",
           url: "https://www.llamaindex.ai/guides/retrieval-augmented-generation",
         },
       },
@@ -106,7 +106,7 @@ const TechStack = () => {
         name: "Vector DBs (Weaviate, ChromaDB, Milvus)",
         details: {
           title: "Vector DBs",
-          desc: "Store and search embeddings at scale for semantic search and AI applications.",
+          desc: "Optimized storage engines giving your AI instant access to vast knowledge bases.",
           url: "https://weaviate.io/",
         },
       },
@@ -114,7 +114,7 @@ const TechStack = () => {
         name: "AI Agents (CrewAI, AutoGen, DSPy)",
         details: {
           title: "AI Agents",
-          desc: "Multi-agent frameworks for complex, autonomous AI workflows.",
+          desc: "Autonomous systems capable of planning multi-step workflows and executing tasks independently.",
           url: "https://crewai.com/",
         },
       },
@@ -124,7 +124,7 @@ const TechStack = () => {
         name: "Node.js",
         details: {
           title: "Node.js",
-          desc: "Fast, scalable JavaScript runtime for backend APIs and microservices.",
+          desc: "Event-driven runtime for building scalable, high-throughput network applications and real-time APIs.",
           url: "https://nodejs.org/",
         },
       },
@@ -132,7 +132,7 @@ const TechStack = () => {
         name: "Python (FastAPI)",
         details: {
           title: "FastAPI",
-          desc: "Modern, fast Python web framework for building APIs with automatic docs.",
+          desc: "Modern, high-performance web framework for building rapid, data-intensive APIs with automatic validation.",
           url: "https://fastapi.tiangolo.com/",
         },
       },
@@ -140,7 +140,7 @@ const TechStack = () => {
         name: "Python (Django)",
         details: {
           title: "Django",
-          desc: "Robust Python web framework for rapid development and clean design.",
+          desc: "Secure, high-level framework for rapid development of robust, enterprise-grade backend systems.",
           url: "https://www.djangoproject.com/",
         },
       },
@@ -148,7 +148,7 @@ const TechStack = () => {
         name: "Go",
         details: {
           title: "Go",
-          desc: "Efficient, compiled backend language for high-performance services.",
+          desc: "Ultra-fast, compiled language ideal for high-concurrency cloud services and microservices.",
           url: "https://go.dev/",
         },
       },
@@ -156,7 +156,7 @@ const TechStack = () => {
         name: "Ruby on Rails",
         details: {
           title: "Ruby on Rails",
-          desc: "Rapid web app development framework with convention over configuration.",
+          desc: "The 'startup speed' framework for rapid prototyping and launching MVPs in record time.",
           url: "https://rubyonrails.org/",
         },
       },
@@ -164,7 +164,7 @@ const TechStack = () => {
         name: "GraphQL",
         details: {
           title: "GraphQL",
-          desc: "Flexible API query language for efficient data fetching.",
+          desc: "Flexible query language that optimizes data fetching, reducing network load for complex applications.",
           url: "https://graphql.org/",
         },
       },
@@ -172,7 +172,7 @@ const TechStack = () => {
         name: "Microservices",
         details: {
           title: "Microservices",
-          desc: "Decoupled, scalable backend architecture for large systems.",
+          desc: "Modular architecture ensuring independent scaling, fault isolation, and easier long-term maintenance.",
           url: "https://microservices.io/",
         },
       },
@@ -180,7 +180,7 @@ const TechStack = () => {
         name: "Serverless",
         details: {
           title: "Serverless",
-          desc: "Deploy code without managing servers, pay only for usage.",
+          desc: "Event-driven architecture that eliminates infrastructure management and scales costs purely on usage.",
           url: "https://serverless.com/",
         },
       },
@@ -188,7 +188,7 @@ const TechStack = () => {
         name: "Real-time systems",
         details: {
           title: "Real-time systems",
-          desc: "Live data and event-driven backends for instant updates.",
+          desc: "WebSocket-based architecture enabling instant data synchronization and live user collaboration.",
           url: "https://ably.com/concepts/real-time",
         },
       },
@@ -198,7 +198,7 @@ const TechStack = () => {
         name: "React",
         details: {
           title: "React",
-          desc: "Component-based UI library for building interactive web apps.",
+          desc: "The industry standard for building dynamic, interactive, and high-performance user interfaces.",
           url: "https://react.dev/",
         },
       },
@@ -206,7 +206,7 @@ const TechStack = () => {
         name: "Next.js",
         details: {
           title: "Next.js",
-          desc: "React framework for SSR, SSG, and full-stack web apps.",
+          desc: "Production-grade React framework offering server-side rendering for superior speed and SEO performance.",
           url: "https://nextjs.org/",
         },
       },
@@ -214,7 +214,7 @@ const TechStack = () => {
         name: "Vue.js",
         details: {
           title: "Vue.js",
-          desc: "Progressive JavaScript framework for building UIs.",
+          desc: "Progressive framework for building lightweight, maintainable, and highly performant interfaces.",
           url: "https://vuejs.org/",
         },
       },
@@ -222,7 +222,7 @@ const TechStack = () => {
         name: "Flutter",
         details: {
           title: "Flutter",
-          desc: "Cross-platform mobile UI toolkit by Google.",
+          desc: "Google’s UI toolkit for compiling beautiful, natively compiled mobile apps from a single codebase.",
           url: "https://flutter.dev/",
         },
       },
@@ -230,7 +230,7 @@ const TechStack = () => {
         name: "React Native",
         details: {
           title: "React Native",
-          desc: "Native mobile apps using React and JavaScript.",
+          desc: "Cross-platform framework delivering native mobile performance with the efficiency of React development.",
           url: "https://reactnative.dev/",
         },
       },
@@ -240,7 +240,7 @@ const TechStack = () => {
         name: "AWS",
         details: {
           title: "AWS",
-          desc: "Comprehensive cloud platform for hosting, compute, and storage.",
+          desc: "The world’s most comprehensive cloud platform, offering unlimited scalability for mission-critical apps.",
           url: "https://aws.amazon.com/",
         },
       },
@@ -248,7 +248,7 @@ const TechStack = () => {
         name: "GCP",
         details: {
           title: "GCP",
-          desc: "Google's cloud infrastructure for scalable apps.",
+          desc: "Google’s cloud infrastructure, specifically optimized for AI workloads, data analytics, and containerization.",
           url: "https://cloud.google.com/",
         },
       },
@@ -256,7 +256,7 @@ const TechStack = () => {
         name: "Azure",
         details: {
           title: "Azure",
-          desc: "Microsoft's cloud services for enterprise and startups.",
+          desc: "Enterprise-grade cloud computing with seamless integration for Microsoft-centric organizations.",
           url: "https://azure.microsoft.com/",
         },
       },
@@ -264,7 +264,7 @@ const TechStack = () => {
         name: "Docker",
         details: {
           title: "Docker",
-          desc: "Containerization for portability and consistency across environments.",
+          desc: "Containerization standard ensuring your software runs consistently across development and production.",
           url: "https://www.docker.com/",
         },
       },
@@ -272,7 +272,7 @@ const TechStack = () => {
         name: "Kubernetes",
         details: {
           title: "Kubernetes",
-          desc: "Container orchestration at scale for microservices.",
+          desc: "Automated container orchestration for managing massive scale and reliability in cloud environments.",
           url: "https://kubernetes.io/",
         },
       },
@@ -280,7 +280,7 @@ const TechStack = () => {
         name: "Terraform",
         details: {
           title: "Terraform",
-          desc: "Infrastructure as code for automated cloud provisioning.",
+          desc: "Infrastructure as Code (IaC) allowing for safe, predictable, and reproducible cloud provisioning.",
           url: "https://www.terraform.io/",
         },
       },
@@ -288,7 +288,7 @@ const TechStack = () => {
         name: "CI/CD",
         details: {
           title: "CI/CD",
-          desc: "Automated build, test, and deployment pipelines.",
+          desc: "Automated pipelines ensuring rapid, reliable code delivery, testing, and deployment cycles.",
           url: "https://www.redhat.com/en/topics/devops/what-is-ci-cd",
         },
       },
@@ -298,7 +298,7 @@ const TechStack = () => {
         name: "Snowflake",
         details: {
           title: "Snowflake",
-          desc: "Cloud data warehouse platform for analytics and BI.",
+          desc: "Cloud-native data warehousing for seamless storage, analysis, and sharing across multiple clouds.",
           url: "https://www.snowflake.com/",
         },
       },
@@ -306,7 +306,7 @@ const TechStack = () => {
         name: "BigQuery",
         details: {
           title: "BigQuery",
-          desc: "Serverless data warehouse by Google for big data analytics.",
+          desc: "Serverless, highly scalable data warehouse designed for real-time business insights and analytics.",
           url: "https://cloud.google.com/bigquery",
         },
       },
@@ -314,7 +314,7 @@ const TechStack = () => {
         name: "Redshift",
         details: {
           title: "Redshift",
-          desc: "Amazon's data warehouse service for scalable analytics.",
+          desc: "Fast, simple, and cost-effective data warehousing fully integrated with the AWS ecosystem.",
           url: "https://aws.amazon.com/redshift/",
         },
       },
@@ -322,7 +322,7 @@ const TechStack = () => {
         name: "Airflow",
         details: {
           title: "Airflow",
-          desc: "Workflow automation and scheduling for data pipelines.",
+          desc: "Platform to programmatically author, schedule, and monitor complex data processing workflows.",
           url: "https://airflow.apache.org/",
         },
       },
@@ -330,7 +330,7 @@ const TechStack = () => {
         name: "dbt",
         details: {
           title: "dbt",
-          desc: "Analytics engineering for data teams, enabling transformation and modeling.",
+          desc: "Analytics engineering tool that transforms raw data in the warehouse into reliable business insights.",
           url: "https://www.getdbt.com/",
         },
       },
@@ -338,7 +338,7 @@ const TechStack = () => {
         name: "ETL / Data Lakes",
         details: {
           title: "ETL / Data Lakes",
-          desc: "Data integration, transformation, and storage at scale.",
+          desc: "Centralized repositories and pipelines capable of processing and storing vast amounts of raw data.",
           url: "https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/",
         },
       },
@@ -350,7 +350,7 @@ const TechStack = () => {
   );
 
   return (
-    <section id="tech-stack" className="py-16 px-2 sm:px-6 md:py-20">
+    <section id="tech-stack" className="py-8 px-2 sm:px-6 md:py-10">
       <div className="container mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2
@@ -360,9 +360,9 @@ const TechStack = () => {
             Our Unified Tech Stack
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We engineer with modern, scalable technologies—combined with
-            advanced AI frameworks—to ensure your product is fast, intelligent,
-            and built for long-term growth.
+            We engineer with modern, scalable technologies combined with
+advanced AI frameworks to ensure your product is fast, intelligent, and built for
+long-term growth.
           </p>
         </div>
 

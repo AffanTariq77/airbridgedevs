@@ -4,37 +4,40 @@ import { Brain, Rocket, Zap } from "lucide-react";
 const pillars = [
   {
     icon: Brain,
-    title: "AI-First Development",
+    title: "AI-Native Architecture",
     description:
-      "We embed AI into every layer of your product — from smart workflows to automation, predictive analytics, and LLM integrations.",
+      "We embed AI into every layer of your product, from smart workflows to automation, predictive analytics, and LLM integrations.",
   },
   {
     icon: Rocket,
-    title: "End-to-End Delivery",
+    title: "Commercial-Grade Execution",
     description:
-      "Whether building from scratch or leveling up, we handle the lifecycle: MVP, Custom Engineering, and Scale.",
+      <>
+  We move beyond <strong>"science experiments"</strong>. From concept to deployment, we build secure, compliant, and scalable systems designed to handle real-world enterprise traffic.
+</>
   },
   {
     icon: Zap,
-    title: "Future-Ready Engineering",
+    title: "Future-Proof Scale",
     description:
-      "Our teams work with modern stacks ensuring scalability, performance, and top-tier code quality.",
+      "We write modular, clean code using modern stacks. This ensures your platform isn't just fast today, but easy to maintain and upgrade as technology evolves 3 years from now.",
   },
 ];
 
 const WhyWorkWithUs = () => {
   return (
-    <section className="py-16 px-2 sm:px-6 md:py-20">
+    <section className="py-8 px-2 sm:px-6 md:py-10">
       <div className="container mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "#192841" }}
           >
-            Why Work With Us?
+            The AirBridge Advantage
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Empowering your growth with AI
+            We don’t just deliver code. We deliver competitive advantage.
+Empowering your growth with AI
           </p>
         </div>
         {/* SVG gradient definition rendered once */}
