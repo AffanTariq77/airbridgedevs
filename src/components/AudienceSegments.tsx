@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Rocket, Building2, Users } from "lucide-react";
 import WhyWorkWithUs from "./WhyWorkWithUs";
+import * as Dialog from "@radix-ui/react-dialog";
+import ContactForm from "./ContactForm";
 
 const AudienceSegments = () => {
   const segments = [
@@ -29,7 +31,7 @@ const AudienceSegments = () => {
 
   return (
     <>
-      <section id="case-studies" className="py-8 px-2 sm:px-6 md:py-10">
+    <section id="case-studies" className="py-8 px-2 sm:px-6 md:py-10">
         <div className="container mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2
@@ -63,50 +65,57 @@ const AudienceSegments = () => {
             {segments.map((segment, index) => {
               const Icon = segment.icon;
               return (
-                <Card
-                  key={index}
-                  className="p-6 md:p-8 text-center border border-border/40 hover:shadow-sky-blue transition-all duration-300 hover:-translate-y-2"
-                  style={{ background: "#F3F9FF" }}
-                >
-                  <div className="mb-8 flex justify-center">
-                    <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center">
-                      <Icon
-                        width={36}
-                        height={36}
-                        stroke="url(#audience-gradient)"
-                        strokeWidth={1.5}
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                <Dialog.Root key={index}>
+                  <Card
+                    className="p-6 md:p-8 text-center border border-border/40 hover:shadow-sky-blue transition-all duration-300 hover:-translate-y-2"
+                    style={{ background: "#F3F9FF" }}
+                  >
+                    <div className="mb-8 flex justify-center">
+                      <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center">
+                        <Icon
+                          width={36}
+                          height={36}
+                          stroke="url(#audience-gradient)"
+                          strokeWidth={1.5}
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <h3
-                    className="text-2xl font-bold mb-4"
-                    style={{ color: "#192841" }}
-                  >
-                    {segment.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {segment.description}
-                  </p>
-                  <Button
-                    variant="outline"
-                    className="w-full border border-border/40 hover:bg-sky-400 hover:shadow-sky-blue mt-4"
-                    onClick={() => {
-                      const el = document.getElementById("contact");
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
-                  >
-                    {segment.cta}
-                  </Button>
-                </Card>
+                    <h3
+                      className="text-2xl font-bold mb-4"
+                      style={{ color: "#192841" }}
+                    >
+                      {segment.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {segment.description}
+                    </p>
+                    <Dialog.Trigger asChild>
+                      <Button
+                        variant="outline"
+                        className="w-full border border-border/40 hover:bg-sky-400 hover:shadow-sky-blue mt-4">
+                        {segment.cta}
+                      </Button>
+                    </Dialog.Trigger>
+                  </Card>
+                  <Dialog.Portal>
+                    <Dialog.Overlay className="fixed inset-0 bg-black/40 z-50" />
+                    <Dialog.Content className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-xl w-full p-0 bg-transparent border-0 shadow-none z-50 focus:outline-none">
+                      <div className="rounded-2xl bg-white shadow-xl border border-border p-0 overflow-hidden">
+                        <div className="p-0">
+                          <ContactForm onlyForm />
+                        </div>
+                      </div>
+                    </Dialog.Content>
+                  </Dialog.Portal>
+                </Dialog.Root>
               );
             })}
           </div>
         </div>
+        {/* DialogContent moved into each Dialog.Root for proper popup behavior */}
       </section>
       <WhyWorkWithUs />
     </>

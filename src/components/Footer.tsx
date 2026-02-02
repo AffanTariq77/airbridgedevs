@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin } from "lucide-react";
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
+import ContactForm from "./ContactForm";
+
 
 const Footer = () => {
   return (
+    <Dialog>
     <footer
       className="text-secondary-foreground border-t-[0.5px] border-[#b3c7e6]/50"
       style={{ background: "#98cfecff" }}
@@ -26,19 +30,11 @@ const Footer = () => {
           <p className="text-xl text-[#23395d] max-w-2xl mx-auto text-center">
             Book a consultation and see how we can accelerate your product journey with AI-powered engineering.
           </p>
-          <Button
-            size="lg"
-            className="bg-[#23395d] hover:bg-sky-400 text-white gap-2 hover:shadow-[0_4px_24px_0_rgba(25,40,65,0.15)]"
-            onClick={() => {
-              const el = document.getElementById("contact");
-              if (el) {
-                el.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
-            Book Consultation
-            <ArrowRight className="h-5 w-5" />
-          </Button>
+         <DialogTrigger asChild>
+                <Button className="bg-primary hover:bg-sky-400 text-primary-foreground  hover:shadow-sky-blue">
+                  Book a Consultation
+                </Button>
+          </DialogTrigger>
         </div>
       </div>
 
@@ -72,7 +68,16 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <DialogContent className="max-w-xl p-0 bg-transparent border-0 shadow-none">
+        <div className="rounded-2xl bg-white shadow-xl border border-border p-0 overflow-hidden">
+          <div className="p-0">
+            <ContactForm onlyForm />
+          </div>
+        </div>
+      </DialogContent>
     </footer>
+    </Dialog>
+    
   );
 };
 
