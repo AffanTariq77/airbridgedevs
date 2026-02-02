@@ -3,6 +3,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import { useState } from "react";
 import * as THREE from "three";
+import logo from "@/assets/Pngtreeartificial.png";
+
 
 function FloatingImage({ textureUrl }: { textureUrl: string }) {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -38,7 +40,7 @@ export default function Hero3DImage() {
       <Canvas camera={{ position: [0, 0, 5], fov: 40 }} shadows>
         <ambientLight intensity={0.7} />
         <directionalLight position={[2, 4, 2]} intensity={0.7} />
-        <FloatingImage textureUrl="/src/assets/Pngtreeartificial.png" />
+        <FloatingImage textureUrl= {logo} />
         <OrbitControls enableZoom={false} enablePan={false} />
       </Canvas>
     </div>
