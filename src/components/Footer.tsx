@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin } from "lucide-react";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import ContactForm from "./ContactForm";
+import logo from "@/assets/airbridge-logo.png";
+
 
 
 const Footer = () => {
@@ -14,12 +16,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 py-8 md:py-10">
         <div className="flex flex-col items-center space-y-4 md:space-y-5">
           <div className="flex items-center justify-center mb-4">
-            <img
-              src="/src/assets/airbridge-logo.png"
-              alt="AIRBRIDGE DEVS Logo"
-              className="h-10 md:h-12 w-auto object-contain"
-              style={{ maxWidth: '181px' }}
-            />
+            <img src={logo} alt="AirBridge Devs" className="h-8 w-auto" />
           </div>
           <h2
             className="text-4xl md:text-5xl font-bold"
