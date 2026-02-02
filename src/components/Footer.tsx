@@ -48,7 +48,7 @@ const Footer = () => {
                 <a href="#techstack" className="text-sm text-[#23395d] opacity-70 hover:text-sky-400 transition-colors font-medium">Tech Stack</a>
               </nav>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/airbridgedevs/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#23395d] opacity-40 hover:text-sky-400 transition-colors"
