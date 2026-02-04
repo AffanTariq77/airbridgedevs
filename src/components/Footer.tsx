@@ -59,10 +59,10 @@ const Footer = () => {
                   <Linkedin className="h-3.5 xs:h-4 sm:h-5 w-3.5 xs:w-4 sm:w-5" />
                 </a>
                 <a
-                  href="#contact"
+                  href="mailto:info@airbridgedevs.com"
                   className="text-xs text-[#23395d] opacity-40 hover:text-sky-400 transition-colors whitespace-nowrap"
                 >
-                  Contact
+                  info@airbridgedevs.com
                 </a>
               </div>
             </div>
