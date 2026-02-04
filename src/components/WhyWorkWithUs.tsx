@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Brain, Rocket, Zap } from "lucide-react";
 
@@ -25,6 +26,17 @@ const pillars = [
 ];
 
 const WhyWorkWithUs = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section className="py-8 px-2 sm:px-6 md:py-10">
       <div className="container mx-auto">
@@ -62,7 +74,11 @@ Empowering your growth with AI
             return (
               <Card
                 key={index}
-                className="p-6 md:p-8 border border-border/60 hover:border-border/80 transition-all duration-300 hover:shadow-sky-blue"
+                className={`p-6 md:p-8 border border-border/60 transition-all duration-300 ${
+                  isMobile
+                    ? "hover:shadow-sky-blue"
+                    : "hover:border-border/80 hover:shadow-sky-blue"
+                }`}
                 style={{ background: "#F3F9FF" }}
               >
                 <div className="mb-6 flex justify-center items-center">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 
 const Process = () => {
@@ -41,6 +41,26 @@ const Process = () => {
   ];
 
   const [hovered, setHovered] = React.useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleHoverEnter = (index: number) => {
+    if (!isMobile) {
+      setHovered(index);
+    }
+  };
+
+  const handleHoverLeave = () => {
+    setHovered(null);
+  };
 
   return (
     <section id="process" className="py-10 px-6 bg-muted/20">
@@ -64,14 +84,16 @@ your build at every stage. A proven process from concept to scale
               <div
                 key={index}
                 className="relative"
-                onMouseEnter={() => setHovered(index)}
-                onMouseLeave={() => setHovered(null)}
+                onMouseEnter={() => handleHoverEnter(index)}
+                onMouseLeave={() => handleHoverLeave()}
               >
                 <Card
                   className={`p-6 h-full border border-border/40 transition-all duration-300 bg-[#F3F9FF] ${
-                    hovered === index
-                      ? "scale-105 shadow-2xl z-20"
-                      : "hover:shadow-sky-blue"
+                    isMobile
+                      ? "hover:shadow-sky-blue"
+                      : hovered === index
+                        ? "scale-105 shadow-2xl z-20"
+                        : "hover:shadow-sky-blue"
                   }`}
                   style={{ background: "#F3F9FF" }}
                 >

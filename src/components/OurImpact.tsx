@@ -26,11 +26,11 @@ const metrics = [
 
 const OurImpact = () => {
   return (
-    <section className="py-8 px-2 sm:px-6 md:py-10">
+    <section className="py-6 xs:py-8 sm:py-10 px-3 xs:px-4 sm:px-6 md:py-12">
       <div className="container mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 xs:mb-4"
             style={{ color: "#192841" }}
           >
             Proven Engineering at Scale
@@ -49,19 +49,20 @@ enterprise modernization, our systems are built to last.
             </linearGradient>
           </defs>
         </svg>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4 sm:gap-6 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
           {metrics.map((metric, idx) => {
             const Icon = metric.icon;
             return (
               <Card
                 key={idx}
-                className="p-8 text-center border border-border/40 hover:shadow-sky-blue transition-all duration-300 hover:-translate-y-2"
+                className="p-4 xs:p-6 sm:p-8 text-center border border-border/40 hover:shadow-sky-blue transition-all duration-300 hover:-translate-y-2"
                 style={{ background: "#F3F9FF" }}
               >
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-3 xs:mb-4 sm:mb-6">
                   <Icon
-                    width={40}
-                    height={40}
+                    width={28}
+                    height={28}
+                    className="xs:w-8 sm:w-10"
                     strokeWidth={1.5}
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -70,12 +71,12 @@ enterprise modernization, our systems are built to last.
                   />
                 </div>
                 <div
-                  className="text-3xl font-bold mb-2"
+                  className="text-xl xs:text-2xl sm:text-3xl font-bold mb-2 xs:mb-3"
                   style={{ color: "#192841" }}
                 >
                   {metric.value}
                 </div>
-                <div className="text-lg text-muted-foreground font-medium">
+                <div className="text-xs xs:text-sm sm:text-lg text-muted-foreground font-medium">
                   {metric.label}
                 </div>
               </Card>

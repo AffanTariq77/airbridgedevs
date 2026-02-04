@@ -62,41 +62,41 @@ const AdminPanel: React.FC = () => {
       <main className="flex-1 container mx-auto max-w-6xl py-12 px-2 md:px-6">
         <Card className="shadow-lg border-[#b3c7e6]/50 bg-white">
           <CardHeader>
-            <CardTitle className="text-3xl font-bold" style={{ color: '#192841' }}>Contact Form Submissions</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl md:text-3xl font-bold" style={{ color: '#192841' }}>Contact Form Submissions</CardTitle>
           </CardHeader>
           <CardContent>
             {loading && <div className="text-center text-lg text-[#23395d]">Loading...</div>}
             {error && <div className="text-center text-red-600 font-semibold">{error}</div>}
             {!loading && !error && Array.isArray(submissions) && (
               <div className="overflow-x-auto max-w-full" style={{maxHeight: '60vh', overflowY: 'auto'}}>
-                <Table style={{minWidth: '900px'}}>
+                <Table className="w-full">
                   <TableHeader>
-                    <tr className="bg-[#e3edfa] text-[#192841]">
-                      <th className="px-4 py-2 rounded-l-lg">ID</th>
-                      <th className="px-4 py-2">Name</th>
-                      <th className="px-4 py-2">Email</th>
-                      <th className="px-4 py-2">Company</th>
-                      <th className="px-4 py-2">Message</th>
-                      <th className="px-4 py-2">Timestamp</th>
-                      <th className="px-4 py-2 rounded-r-lg">Actions</th>
+                    <tr className="bg-[#e3edfa] text-[#192841] text-xs sm:text-sm">
+                      <th className="px-2 sm:px-4 py-2 rounded-l-lg">ID</th>
+                      <th className="px-2 sm:px-4 py-2">Name</th>
+                      <th className="px-2 sm:px-4 py-2 hidden sm:table-cell">Email</th>
+                      <th className="px-2 sm:px-4 py-2 hidden md:table-cell">Company</th>
+                      <th className="px-2 sm:px-4 py-2 hidden lg:table-cell">Message</th>
+                      <th className="px-2 sm:px-4 py-2 hidden md:table-cell">Timestamp</th>
+                      <th className="px-2 sm:px-4 py-2 rounded-r-lg">Actions</th>
                     </tr>
                   </TableHeader>
                   <TableBody>
                     {submissions.length === 0 ? (
                       <TableRow>
-                        <td colSpan={6} className="text-center text-[#23395d] py-8">No submissions yet.</td>
+                        <td colSpan={7} className="text-center text-[#23395d] py-8">No submissions yet.</td>
                       </TableRow>
                     ) : (
                       submissions.map((s, i) => (
                         <TableRow key={s.id} className={i % 2 === 0 ? 'bg-white' : 'bg-[#f0f6fd]'}>
-                          <td className="px-4 py-2 font-semibold text-[#23395d] text-center">{s.id}</td>
-                          <td className="px-4 py-2 text-[#23395d]">{s.name}</td>
-                          <td className="px-4 py-2 text-blue-700 underline break-all">{s.email}</td>
-                          <td className="px-4 py-2 text-[#23395d] max-w-xs break-words truncate" title={s.company}>{s.company || '-'}</td>
-                          <td className="px-4 py-2 text-[#23395d] max-w-xs break-words truncate" title={s.message}>{s.message}</td>
-                          <td className="px-4 py-2 text-[#23395d] whitespace-nowrap">{new Date(s.timestamp).toLocaleString()}</td>
-                          <td className="px-4 py-2 text-center">
-                            <Button size="sm" variant="outline" className="text-[#23395d] border-[#b3c7e6]" onClick={() => { setSelected(s); setPopupOpen(true); }}>
+                          <td className="px-2 sm:px-4 py-2 font-semibold text-[#23395d] text-center text-xs sm:text-sm">{s.id}</td>
+                          <td className="px-2 sm:px-4 py-2 text-[#23395d] text-xs sm:text-sm">{s.name}</td>
+                          <td className="px-2 sm:px-4 py-2 text-blue-700 underline break-all text-xs sm:text-sm hidden sm:table-cell">{s.email}</td>
+                          <td className="px-2 sm:px-4 py-2 text-[#23395d] max-w-xs break-words text-xs sm:text-sm hidden md:table-cell" title={s.company}>{s.company || '-'}</td>
+                          <td className="px-2 sm:px-4 py-2 text-[#23395d] max-w-xs break-words text-xs sm:text-sm hidden lg:table-cell" title={s.message}>{s.message}</td>
+                          <td className="px-2 sm:px-4 py-2 text-[#23395d] whitespace-nowrap text-xs sm:text-sm hidden md:table-cell">{new Date(s.timestamp).toLocaleString()}</td>
+                          <td className="px-2 sm:px-4 py-2 text-center">
+                            <Button size="sm" variant="outline" className="text-[#23395d] border-[#b3c7e6] text-xs sm:text-sm py-1 sm:py-2 h-auto" onClick={() => { setSelected(s); setPopupOpen(true); }}>
                               View
                             </Button>
                           </td>
@@ -115,9 +115,9 @@ const AdminPanel: React.FC = () => {
         {selected && (
           <>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-[#23395d] text-center">Submission Details</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#23395d] text-center">Submission Details</h2>
             </div>
-            <div className="space-y-4 break-words max-w-2xl w-[480px] mx-auto">
+            <div className="space-y-4 break-words max-w-2xl w-[90vw] sm:w-[400px] md:w-[480px] mx-auto px-4 sm:px-0">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-[#23395d]">Name:</span>
                 <span className="text-[#23395d]">{selected.name}</span>

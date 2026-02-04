@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Rocket, Building2, Users } from "lucide-react";
@@ -28,6 +29,17 @@ const AudienceSegments = () => {
       cta: "Augment Your Team",
     },
   ];
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <>
@@ -67,7 +79,11 @@ const AudienceSegments = () => {
               return (
                 <Dialog.Root key={index}>
                   <Card
-                    className="p-6 md:p-8 text-center border border-border/40 hover:shadow-sky-blue transition-all duration-300 hover:-translate-y-2"
+                    className={`p-6 md:p-8 text-center border border-border/40 transition-all duration-300 ${
+                      isMobile
+                        ? "hover:shadow-sky-blue"
+                        : "hover:shadow-sky-blue hover:-translate-y-2"
+                    }`}
                     style={{ background: "#F3F9FF" }}
                   >
                     <div className="mb-8 flex justify-center">

@@ -15,9 +15,9 @@ const ClientMarquee = () => {
   const marqueeClients = [...clients, ...clients];
 
   return (
-    <div className="relative overflow-hidden py-8 w-screen max-w-none left-1/2 right-1/2 -translate-x-1/2">
+    <div className="relative overflow-hidden py-5 xs:py-6 sm:py-8 w-screen max-w-none left-1/2 right-1/2 -translate-x-1/2 px-3 xs:px-4">
       <div
-        className="flex gap-12 min-w-full animate-marquee-loop"
+        className="flex gap-6 xs:gap-8 sm:gap-12 min-w-full animate-marquee-loop"
         style={{
           animationDuration: "32s",
           animationTimingFunction: "linear",
@@ -27,12 +27,12 @@ const ClientMarquee = () => {
         {marqueeClients.map((client, index) => (
           <div
             key={index}
-            className="flex-shrink-0 flex items-center justify-center px-6 md:px-10 lg:px-14"
+            className="flex-shrink-0 flex items-center justify-center px-3 xs:px-4 sm:px-6 md:px-10 lg:px-14"
           >
             <img
               src={client.logo}
               alt={client.name}
-              className="h-12 w-auto object-contain mx-auto"
+              className="h-8 xs:h-10 sm:h-12 w-auto object-contain mx-auto"
               draggable={false}
             />
           </div>

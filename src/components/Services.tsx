@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import OurImpact from "./OurImpact";
 
@@ -74,6 +74,26 @@ const Services = () => {
   ];
 
   const [hovered, setHovered] = React.useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleHoverEnter = (index: number) => {
+    if (!isMobile) {
+      setHovered(index);
+    }
+  };
+
+  const handleHoverLeave = () => {
+    setHovered(null);
+  };
 
   return (
     <>
@@ -119,14 +139,16 @@ infrastructure that powers your growth.
                 <div
                   key={index}
                   className="flex h-full"
-                  onMouseEnter={() => setHovered(index)}
-                  onMouseLeave={() => setHovered(null)}
+                  onMouseEnter={() => handleHoverEnter(index)}
+                  onMouseLeave={() => handleHoverLeave()}
                 >
                   <Card
                     className={`flex flex-col justify-between p-6 md:p-8 border border-border/40 transition-all duration-300 bg-[#F3F9FF] min-h-[320px] h-full w-full ${
-                      hovered === index
-                        ? "scale-105 shadow-2xl z-20 -translate-y-2"
-                        : "hover:shadow-sky-blue hover:-translate-y-1"
+                      isMobile
+                        ? "hover:shadow-sky-blue"
+                        : hovered === index
+                          ? "scale-105 shadow-2xl z-20 -translate-y-2"
+                          : "hover:shadow-sky-blue hover:-translate-y-1"
                     }`}
                     style={{ background: "#F3F9FF" }}
                   >

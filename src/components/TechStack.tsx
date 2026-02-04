@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
@@ -63,10 +63,10 @@ const TechStack = () => {
         },
       },
       {
-        name: "Cohere",
+        name: "Cohiere",
         details: {
-          title: "Cohere",
-          desc: "Enterprise-focused NLP models optimized for secure search, classification, and retrieval tasks.",
+          title: "Cohiere",
+          desc: "Reliable enterprise-grade language models for text generation, summarization, and semantic search.",
           url: "https://cohere.com/",
         },
       },
@@ -74,7 +74,7 @@ const TechStack = () => {
         name: "Mistral",
         details: {
           title: "Mistral",
-          desc: "Efficient, high-performance open-source models offering cost-effective scalability for on-premise solutions.",
+          desc: "High-performance open-source AI models offering excellent cost-to-quality ratio for edge and cloud deployment.",
           url: "https://mistral.ai/",
         },
       },
@@ -82,7 +82,7 @@ const TechStack = () => {
         name: "Hugging Face",
         details: {
           title: "Hugging Face",
-          desc: "The global hub for state-of-the-art open-source models, enabling rapid prototyping and deployment.",
+          desc: "Open-source hub for thousands of pre-trained models and datasets, enabling rapid ML prototyping and deployment.",
           url: "https://huggingface.co/",
         },
       },
@@ -90,7 +90,7 @@ const TechStack = () => {
         name: "Scikit-learn",
         details: {
           title: "Scikit-learn",
-          desc: "Robust library for predictive data analysis and classical machine learning algorithms.",
+          desc: "Comprehensive Python library for classical machine learning, preprocessing, and model evaluation.",
           url: "https://scikit-learn.org/",
         },
       },
@@ -98,24 +98,8 @@ const TechStack = () => {
         name: "RAG pipelines",
         details: {
           title: "RAG pipelines",
-          desc: "Custom retrieval architectures that ground AI responses in your verified business data to prevent hallucinations.",
-          url: "https://www.llamaindex.ai/guides/retrieval-augmented-generation",
-        },
-      },
-      {
-        name: "Vector DBs (Weaviate, ChromaDB, Milvus)",
-        details: {
-          title: "Vector DBs",
-          desc: "Optimized storage engines giving your AI instant access to vast knowledge bases.",
-          url: "https://weaviate.io/",
-        },
-      },
-      {
-        name: "AI Agents (CrewAI, AutoGen, DSPy)",
-        details: {
-          title: "AI Agents",
-          desc: "Autonomous systems capable of planning multi-step workflows and executing tasks independently.",
-          url: "https://crewai.com/",
+          desc: "Retrieval-Augmented Generation systems combining document retrieval with language models for accurate, context-aware responses.",
+          url: "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
         },
       },
     ],
@@ -124,24 +108,72 @@ const TechStack = () => {
         name: "Node.js",
         details: {
           title: "Node.js",
-          desc: "Event-driven runtime for building scalable, high-throughput network applications and real-time APIs.",
+          desc: "Non-blocking, event-driven JavaScript runtime perfect for building scalable, real-time server applications.",
           url: "https://nodejs.org/",
         },
       },
       {
-        name: "Python (FastAPI)",
+        name: "Python",
+        details: {
+          title: "Python",
+          desc: "Versatile language with rich AI/ML libraries (NumPy, Pandas, Scikit-learn), ideal for backend services and data processing.",
+          url: "https://www.python.org/",
+        },
+      },
+      {
+        name: "PostgreSQL",
+        details: {
+          title: "PostgreSQL",
+          desc: "Open-source relational database with advanced features like JSON support, full-text search, and excellent scaling.",
+          url: "https://www.postgresql.org/",
+        },
+      },
+      {
+        name: "MongoDB",
+        details: {
+          title: "MongoDB",
+          desc: "NoSQL document database optimized for flexible schemas and horizontal scaling across distributed systems.",
+          url: "https://www.mongodb.com/",
+        },
+      },
+      {
+        name: "Redis",
+        details: {
+          title: "Redis",
+          desc: "In-memory data store enabling ultra-fast caching, session management, and real-time data operations.",
+          url: "https://redis.io/",
+        },
+      },
+      {
+        name: "Docker",
+        details: {
+          title: "Docker",
+          desc: "Containerization platform ensuring consistent deployment across development, staging, and production environments.",
+          url: "https://www.docker.com/",
+        },
+      },
+      {
+        name: "Kubernetes",
+        details: {
+          title: "Kubernetes",
+          desc: "Orchestration platform for automating containerized application deployment, scaling, and management.",
+          url: "https://kubernetes.io/",
+        },
+      },
+      {
+        name: "FastAPI",
         details: {
           title: "FastAPI",
-          desc: "Modern, high-performance web framework for building rapid, data-intensive APIs with automatic validation.",
+          desc: "Modern Python web framework for building APIs with automatic documentation and exceptional performance.",
           url: "https://fastapi.tiangolo.com/",
         },
       },
       {
-        name: "Python (Django)",
+        name: "Express.js",
         details: {
-          title: "Django",
-          desc: "Secure, high-level framework for rapid development of robust, enterprise-grade backend systems.",
-          url: "https://www.djangoproject.com/",
+          title: "Express.js",
+          desc: "Minimal and flexible Node.js framework for building robust APIs and web applications quickly.",
+          url: "https://expressjs.com/",
         },
       },
       {
@@ -198,15 +230,31 @@ const TechStack = () => {
         name: "React",
         details: {
           title: "React",
-          desc: "The industry standard for building dynamic, interactive, and high-performance user interfaces.",
+          desc: "Modern JavaScript library for building interactive, component-driven user interfaces with excellent developer experience.",
           url: "https://react.dev/",
+        },
+      },
+      {
+        name: "TypeScript",
+        details: {
+          title: "TypeScript",
+          desc: "Typed superset of JavaScript providing compile-time error detection and superior code maintainability.",
+          url: "https://www.typescriptlang.org/",
+        },
+      },
+      {
+        name: "Tailwind CSS",
+        details: {
+          title: "Tailwind CSS",
+          desc: "Utility-first CSS framework enabling rapid UI development with consistent, responsive design patterns.",
+          url: "https://tailwindcss.com/",
         },
       },
       {
         name: "Next.js",
         details: {
           title: "Next.js",
-          desc: "Production-grade React framework offering server-side rendering for superior speed and SEO performance.",
+          desc: "React framework with built-in SSR, static generation, and API routes for full-stack web applications.",
           url: "https://nextjs.org/",
         },
       },
@@ -214,24 +262,64 @@ const TechStack = () => {
         name: "Vue.js",
         details: {
           title: "Vue.js",
-          desc: "Progressive framework for building lightweight, maintainable, and highly performant interfaces.",
+          desc: "Progressive JavaScript framework combining the best of React and Angular with a gentle learning curve.",
           url: "https://vuejs.org/",
         },
       },
       {
-        name: "Flutter",
+        name: "Angular",
         details: {
-          title: "Flutter",
-          desc: "Google’s UI toolkit for compiling beautiful, natively compiled mobile apps from a single codebase.",
-          url: "https://flutter.dev/",
+          title: "Angular",
+          desc: "Full-featured framework for building large-scale, enterprise-grade single-page applications.",
+          url: "https://angular.io/",
         },
       },
       {
-        name: "React Native",
+        name: "Vite",
         details: {
-          title: "React Native",
-          desc: "Cross-platform framework delivering native mobile performance with the efficiency of React development.",
-          url: "https://reactnative.dev/",
+          title: "Vite",
+          desc: "Next-generation frontend tooling offering lightning-fast builds and instant HMR for superior DX.",
+          url: "https://vitejs.dev/",
+        },
+      },
+      {
+        name: "Webpack",
+        details: {
+          title: "Webpack",
+          desc: "Powerful module bundler with extensive ecosystem enabling advanced code splitting and optimization.",
+          url: "https://webpack.js.org/",
+        },
+      },
+      {
+        name: "Storybook",
+        details: {
+          title: "Storybook",
+          desc: "Isolated component development environment enabling better testing and documentation of UI components.",
+          url: "https://storybook.js.org/",
+        },
+      },
+      {
+        name: "Testing Library",
+        details: {
+          title: "Testing Library",
+          desc: "User-centric testing framework encouraging writing tests that validate actual user behavior.",
+          url: "https://testing-library.com/",
+        },
+      },
+      {
+        name: "Three.js",
+        details: {
+          title: "Three.js",
+          desc: "JavaScript 3D library enabling creation of stunning interactive 3D experiences in the browser.",
+          url: "https://threejs.org/",
+        },
+      },
+      {
+        name: "D3.js",
+        details: {
+          title: "D3.js",
+          desc: "Data visualization library for creating custom, interactive, and dynamic visual representations.",
+          url: "https://d3js.org/",
         },
       },
     ],
@@ -240,15 +328,15 @@ const TechStack = () => {
         name: "AWS",
         details: {
           title: "AWS",
-          desc: "The world’s most comprehensive cloud platform, offering unlimited scalability for mission-critical apps.",
+          desc: "Comprehensive cloud platform offering EC2, S3, Lambda, RDS, and hundreds of services for any use case.",
           url: "https://aws.amazon.com/",
         },
       },
       {
-        name: "GCP",
+        name: "Google Cloud",
         details: {
-          title: "GCP",
-          desc: "Google’s cloud infrastructure, specifically optimized for AI workloads, data analytics, and containerization.",
+          title: "Google Cloud",
+          desc: "Enterprise-grade cloud with strong AI/ML capabilities, superior data analytics, and BigQuery integration.",
           url: "https://cloud.google.com/",
         },
       },
@@ -256,44 +344,84 @@ const TechStack = () => {
         name: "Azure",
         details: {
           title: "Azure",
-          desc: "Enterprise-grade cloud computing with seamless integration for Microsoft-centric organizations.",
+          desc: "Microsoft's cloud platform integrating seamlessly with enterprise software and offering strong AI services.",
           url: "https://azure.microsoft.com/",
         },
       },
       {
-        name: "Docker",
+        name: "Vercel",
         details: {
-          title: "Docker",
-          desc: "Containerization standard ensuring your software runs consistently across development and production.",
-          url: "https://www.docker.com/",
+          title: "Vercel",
+          desc: "Optimal platform for Next.js deployment offering edge functions, automatic CI/CD, and global CDN.",
+          url: "https://vercel.com/",
         },
       },
       {
-        name: "Kubernetes",
+        name: "Netlify",
         details: {
-          title: "Kubernetes",
-          desc: "Automated container orchestration for managing massive scale and reliability in cloud environments.",
-          url: "https://kubernetes.io/",
+          title: "Netlify",
+          desc: "Git-connected platform for deploying static sites and serverless functions with automatic rollback.",
+          url: "https://www.netlify.com/",
         },
       },
       {
-        name: "Terraform",
+        name: "Heroku",
         details: {
-          title: "Terraform",
-          desc: "Infrastructure as Code (IaC) allowing for safe, predictable, and reproducible cloud provisioning.",
-          url: "https://www.terraform.io/",
+          title: "Heroku",
+          desc: "Platform-as-a-Service simplifying app deployment with built-in DevOps, databases, and scaling.",
+          url: "https://www.heroku.com/",
         },
       },
       {
-        name: "CI/CD",
+        name: "DigitalOcean",
         details: {
-          title: "CI/CD",
-          desc: "Automated pipelines ensuring rapid, reliable code delivery, testing, and deployment cycles.",
-          url: "https://www.redhat.com/en/topics/devops/what-is-ci-cd",
+          title: "DigitalOcean",
+          desc: "Developer-friendly cloud provider offering affordable VPS, managed databases, and Kubernetes solutions.",
+          url: "https://www.digitalocean.com/",
+        },
+      },
+      {
+        name: "GitHub Actions",
+        details: {
+          title: "GitHub Actions",
+          desc: "Native CI/CD automation within GitHub enabling automated testing, building, and deployment workflows.",
+          url: "https://github.com/features/actions",
+        },
+      },
+      {
+        name: "GitLab CI",
+        details: {
+          title: "GitLab CI",
+          desc: "Built-in CI/CD pipeline system with superior parallelization and enterprise security features.",
+          url: "https://docs.gitlab.com/ee/ci/",
+        },
+      },
+      {
+        name: "Jenkins",
+        details: {
+          title: "Jenkins",
+          desc: "Open-source automation server enabling flexible, powerful CI/CD pipeline orchestration.",
+          url: "https://www.jenkins.io/",
         },
       },
     ],
     data: [
+      {
+        name: "Apache Spark",
+        details: {
+          title: "Apache Spark",
+          desc: "Unified analytics engine for large-scale distributed data processing with exceptional performance.",
+          url: "https://spark.apache.org/",
+        },
+      },
+      {
+        name: "Apache Kafka",
+        details: {
+          title: "Apache Kafka",
+          desc: "Distributed streaming platform for building real-time data pipelines and event-driven applications.",
+          url: "https://kafka.apache.org/",
+        },
+      },
       {
         name: "Snowflake",
         details: {
@@ -348,83 +476,119 @@ const TechStack = () => {
   const [hovered, setHovered] = useState<{ cat: string; idx: number } | null>(
     null,
   );
+  const [clicked, setClicked] = useState<{ cat: string; idx: number } | null>(
+    null,
+  );
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleHoverEnter = (cat: string, idx: number) => {
+    if (!isMobile) {
+      setHovered({ cat, idx });
+    }
+  };
+
+  const handleHoverLeave = () => {
+    setHovered(null);
+  };
+
+  const handleClick = (cat: string, idx: number) => {
+    if (isMobile) {
+      setClicked(
+        clicked && clicked.cat === cat && clicked.idx === idx
+          ? null
+          : { cat, idx }
+      );
+    }
+  };
 
   return (
-    <section id="tech-stack" className="py-8 px-2 sm:px-6 md:py-10">
+    <section id="tech-stack" className="py-6 xs:py-8 sm:py-10 px-3 xs:px-4 sm:px-6 md:py-12">
       <div className="container mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-3 xs:mb-4"
             style={{ color: "#192841" }}
           >
             Our Unified Tech Stack
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm xs:text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             We engineer with modern, scalable technologies combined with
 advanced AI frameworks to ensure your product is fast, intelligent, and built for
 long-term growth.
           </p>
         </div>
 
-        <Tabs defaultValue="ai" className="max-w-5xl mx-auto">
-          <TabsList className="grid grid-cols-5 w-full mb-12">
-            <TabsTrigger value="ai">AI & ML</TabsTrigger>
-            <TabsTrigger value="backend">Backend</TabsTrigger>
-            <TabsTrigger value="frontend">Frontend</TabsTrigger>
-            <TabsTrigger value="cloud">Cloud/DevOps</TabsTrigger>
-            <TabsTrigger value="data">Data</TabsTrigger>
-          </TabsList>
-
-          {Object.entries(techCategories).map(([key, technologies]) => (
-            <TabsContent key={key} value={key}>
-              <div className="flex flex-wrap gap-2 sm:gap-4 justify-center p-2 sm:p-6 md:p-8">
-                {technologies.map((tech, index) => (
-                  <div
-                    key={index}
-                    onMouseEnter={() => setHovered({ cat: key, idx: index })}
-                    onMouseLeave={() => setHovered(null)}
-                    className="relative"
-                  >
-                    <Badge
-                      variant="secondary"
-                      className={`px-6 py-3 text-base bg-card/80 text-foreground border border-border/40 transition-all duration-300 opacity-100 cursor-pointer ${
-                        hovered && hovered.cat === key && hovered.idx === index
-                          ? "scale-105 shadow-2xl z-30 border-sky-400"
-                          : "hover:border-sky-400 hover:shadow-sky-blue"
-                      }`}
-                    >
-                      {tech.name}
-                    </Badge>
-                    {/* Tooltip with pointer and richer content */}
+        <div className="max-w-5xl mx-auto">
+          <Tabs defaultValue="ai" className="w-full">
+            <TabsList className="grid grid-cols-3 sm:grid-cols-5 w-full mb-8 xs:mb-10 sm:mb-12 gap-1 xs:gap-2 h-auto p-1 xs:p-1.5">
+              <TabsTrigger value="ai" className="text-xs xs:text-sm py-2 xs:py-3">AI & ML</TabsTrigger>
+              <TabsTrigger value="backend" className="text-xs xs:text-sm py-2 xs:py-3">Backend</TabsTrigger>
+              <TabsTrigger value="frontend" className="text-xs xs:text-sm py-2 xs:py-3 sm:col-span-1 col-span-1">Frontend</TabsTrigger>
+              <TabsTrigger value="cloud" className="hidden sm:inline-flex text-xs xs:text-sm py-2 xs:py-3">Cloud/DevOps</TabsTrigger>
+              <TabsTrigger value="data" className="hidden sm:inline-flex text-xs xs:text-sm py-2 xs:py-3">Data</TabsTrigger>
+            </TabsList>
+            {Object.entries(techCategories).map(([key, technologies]) => (
+              <TabsContent key={key} value={key} className="space-y-6 xs:space-y-8">
+                <div className="flex flex-wrap gap-2 sm:gap-4 justify-center p-2 sm:p-6 md:p-8">
+                  {technologies.map((tech, index) => (
                     <div
-                      className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[320px] max-w-xs bg-background border border-border rounded-xl shadow-2xl p-5 text-sm text-muted-foreground font-sans transition-all duration-300 z-40 pointer-events-none flex flex-col items-center gap-2 ${
-                        hovered && hovered.cat === key && hovered.idx === index
-                          ? "opacity-100 visible translate-y-0"
-                          : "opacity-0 invisible -translate-y-2"
-                      }`}
-                      style={{
-                        boxShadow: "0 8px 32px 0 rgba(0, 80, 180, 0.10)",
-                      }}
+                      key={index}
+                      onMouseEnter={() => handleHoverEnter(key, index)}
+                      onMouseLeave={() => handleHoverLeave()}
+                      onClick={() => handleClick(key, index)}
+                      className="relative"
                     >
-                      <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 mb-1">
-                        <span className="text-primary text-lg font-bold">
-                          {tech.name[0]}
-                        </span>
+                      <Badge
+                        variant="secondary"
+                        className={`px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 text-xs xs:text-sm sm:text-base bg-card/80 text-foreground border border-border/40 transition-all duration-300 opacity-100 cursor-pointer ${
+                          isMobile
+                            ? "hover:border-sky-400 hover:shadow-sky-blue"
+                            : hovered && hovered.cat === key && hovered.idx === index
+                              ? "scale-105 shadow-2xl z-30 border-sky-400"
+                              : "hover:border-sky-400 hover:shadow-sky-blue"
+                        }`}
+                      >
+                        {tech.name}
+                      </Badge>
+                      {/* Tooltip with pointer and richer content */}
+                      <div
+                        className={`absolute left-1/2 -translate-x-1/2 mt-3 w-[90vw] xs:w-[280px] sm:w-[320px] max-w-xs bg-background border border-border rounded-xl shadow-2xl p-3 xs:p-4 sm:p-5 text-xs sm:text-sm text-muted-foreground font-sans transition-all duration-300 z-40 pointer-events-none flex flex-col items-center gap-2 ${
+                          isMobile
+                            ? clicked && clicked.cat === key && clicked.idx === index
+                              ? "opacity-100 visible translate-y-0"
+                              : "opacity-0 invisible -translate-y-2"
+                            : hovered && hovered.cat === key && hovered.idx === index
+                              ? "opacity-100 visible translate-y-0"
+                              : "opacity-0 invisible -translate-y-2"
+                        }`}
+                        style={{
+                          boxShadow: "0 8px 32px 0 rgba(0, 80, 180, 0.10)",
+                        }}
+                      >
+                        <div className="text-sm font-semibold text-primary text-center">
+                          {tech.details.title}
+                        </div>
+                        <div className="text-xs text-muted-foreground text-center mb-2">
+                          {tech.details.desc}
+                        </div>
+                        <div className="absolute left-1/2 -translate-x-1/2 -top-2 w-4 h-4 bg-background border-l border-t border-border rotate-45 z-10"></div>
                       </div>
-                      <div className="text-base font-semibold text-primary mb-1 text-center">
-                        {tech.details.title}
-                      </div>
-                      <div className="text-xs text-muted-foreground text-center mb-2">
-                        {tech.details.desc}
-                      </div>
-                      <div className="absolute left-1/2 -translate-x-1/2 -top-2 w-4 h-4 bg-background border-l border-t border-border rotate-45 z-10"></div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
+                  ))}
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
       </div>
     </section>
   );
