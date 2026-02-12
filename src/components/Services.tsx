@@ -16,6 +16,7 @@ const Services = () => {
     {
       icon: Lightbulb,
       title: "AI Strategy & Consulting",
+      url: "https://strategy.airbridgedevs.com",
       description: [
         "AI Transformation Advisory",
         "Intelligent Innovation Roadmapping",
@@ -26,6 +27,7 @@ const Services = () => {
     {
       icon: Shield,
       title: "AI Integration & Deployment",
+      url: "https://integrate.airbridgedevs.com",
       description: [
         "AI System Integration",
         "Enterprise AI Deployment",
@@ -36,6 +38,7 @@ const Services = () => {
     {
       icon: Puzzle,
       title: "Generative AI Solutions",
+      url: "https://genai.airbridgedevs.com",
       description: [
         "GenAI Automation Suite",
         "RAG (Retrieval-Augmented Generation) Pipelines",
@@ -46,6 +49,7 @@ const Services = () => {
     {
       icon: RefreshCw,
       title: "AI-Powered Automation",
+      url: "https://automate.airbridgedevs.com",
       description: [
         "Smart Process Automation",
         "Intelligent Workflow Orchestration",
@@ -55,6 +59,7 @@ const Services = () => {
     {
       icon: Sparkles,
       title: "Custom AI Model Development",
+      url: "https://data.airbridgedevs.com",
       description: [
         "Bespoke Predictive Modeling",
         "Advanced Algorithm Engineering",
@@ -64,6 +69,7 @@ const Services = () => {
     {
       icon: Box,
       title: "AI Analytics Dashboards",
+      url: "https://build.airbridgedevs.com",
       description: [
         "Smart Insight Dashboards",
         "AI-Driven Business Intelligence",
@@ -136,14 +142,18 @@ infrastructure that powers your growth.
             {services.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div
+                <a
                   key={index}
-                  className="flex h-full"
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${item.title} - Learn more`}
+                  className="flex h-full w-full"
                   onMouseEnter={() => handleHoverEnter(index)}
                   onMouseLeave={() => handleHoverLeave()}
                 >
                   <Card
-                    className={`flex flex-col justify-between p-6 md:p-8 border border-border/40 transition-all duration-300 bg-[#F3F9FF] min-h-[320px] h-full w-full ${
+                    className={`flex flex-col justify-between p-6 md:p-8 border border-border/40 transition-all duration-300 bg-[#F3F9FF] min-h-[320px] h-full w-full cursor-pointer ${
                       isMobile
                         ? "hover:shadow-sky-blue"
                         : hovered === index
@@ -171,7 +181,7 @@ infrastructure that powers your growth.
                       </ul>
                     </div>
                   </Card>
-                </div>
+                </a>
               );
             })}
           </div>
